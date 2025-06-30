@@ -26,7 +26,7 @@ JSON_FILE_PATH = 'C:\\Users\\adam\\Downloads\\brogramming\\economy.json'  # Chan
 STOCK_FILE_PATH = 'C:\\Users\\adam\\Downloads\\brogramming\\python\\ssdata.json' # STOCK DATA!!!
 UPTIME_FILE = "uptime.txt" # txt FILE FOR UPTIME.
 
-CHANNEL_ID = 1247542948346724465 # Channel ID for UPTIME.
+CHANNEL_ID = IDHERE # Channel ID for UPTIME.
 
 # Reference time
 reference_time = datetime(2024, 6, 21, 21, 45, tzinfo=timezone.utc)
@@ -123,7 +123,7 @@ async def on_ready():
 
     await channel.send(f"Established: {days}d {hours}h {minutes}m {seconds}s")
 
-    api_key = 'E92DF58BTR7PGEAK'
+    api_key = 'API KEY HERE'
     symbol = 'QQQM'
     url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={api_key}'
 
@@ -155,13 +155,13 @@ async def on_ready():
             await channel.send("QQQM has not been above $222 in the available data.")
             
     print(f'{client.user} has connected to Discord!')
-    channel = client.get_channel(1247542948346724465)
-    # await channel.send(f'We up, we good, we up :smiling_imp: {client.user}. <@!993544303827767437>')
+    channel = client.get_channel(CHANNEL ID HERE)
+    # await channel.send(f'We up, we good, we up :smiling_imp: {client.user}. PHANTOM ID')
 
 @client.event
 async def on_member_remove(member):
     user_id = member.id
-    channel = client.get_channel(1247542948346724465)  # Replace with your specific channel ID
+    channel = client.get_channel(CHANNEL ID HERE)  # Replace with your specific channel ID
     if channel:
         await channel.send(f"Member {member.name} has left the server. Their ID was {user_id}.")
 
@@ -340,7 +340,7 @@ async def datadump(ctx):
 
 @client.command()
 async def resetprofiles(ctx):
-    if ctx.author.id == 558366862510129192:
+    if ctx.author.id == ADMIN IDs:
         # Clear existing data from JSON file
         try:
             with open(JSON_FILE_PATH, 'w') as json_file:
@@ -416,7 +416,7 @@ async def bal(ctx):
 
 @client.command()
 async def m(ctx, ID: int, *, message: str):
-    if ctx.author.id == 558366862510129192:
+    if ctx.author.id == ADMIN ID:
         channelID = client.get_channel(ID)
         await channelID.send(message)
     else:
@@ -461,7 +461,7 @@ async def prompt(ctx):
 async def promptRB(ctx):
     words = []
     LINT = random.randint(1, 100)
-    target_user_id = 1253812459068985415  # The specific user ID
+    target_user_id = SPECIFIC USER ID  # The specific user ID
 
     for channel in ctx.guild.text_channels:
         try:
@@ -479,7 +479,7 @@ async def promptRB(ctx):
 
 @client.command()
 async def cp(ctx, stock):
-    api_key = 'E92DF58BTR7PGEAK'
+    api_key = 'APIKEY'
     symbol = f'{stock}'
     url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={symbol}&interval=1min&apikey={api_key}'
 
@@ -503,7 +503,7 @@ async def cp(ctx, stock):
 @client.command()
 async def buy(ctx, stock: str, quantity: int):
     user_id = str(ctx.author.id)
-    api_key = 'E92DF58BTR7PGEAK'    
+    api_key = 'APIKEY'    
     # Fetch latest stock price from Alpha Vantage
     symbol = stock.upper()  # Ensure stock symbol is in uppercase
     url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={symbol}&interval=1min&apikey={api_key}'
@@ -569,7 +569,7 @@ async def buy(ctx, stock: str, quantity: int):
 @client.command()
 async def sell(ctx, stock: str, quantity: int):
     user_id = str(ctx.author.id)
-    api_key = 'E92DF58BTR7PGEAK'     
+    api_key = 'APIKEY'     
     # Fetch latest stock price from Alpha Vantage
     symbol = stock.upper()  # Ensure stock symbol is in uppercase
     url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={symbol}&interval=1min&apikey={api_key}'
@@ -649,18 +649,18 @@ async def sell(ctx, stock: str, quantity: int):
 
 @client.command()
 async def portal(ctx, *, message: str):
-    IDA = client.get_channel(1247546147493380157)
-    IDB = client.get_channel(1259420693703950346)
+    IDA = client.get_channel(ID)
+    IDB = client.get_channel(ID)
     user = ctx.author.name
     
     # Check if the message is from a bot and ignore it
     if ctx.author.bot:
         return
     
-    if ctx.channel.id == 1247546147493380157:
+    if ctx.channel.id == ID:
         await IDB.send(f'{user} says: {message}')
 
-    elif ctx.channel.id == 1259420693703950346:
+    elif ctx.channel.id == ID:
         await IDA.send(f'{user} says: {message}')
 
 @client.command()
@@ -786,7 +786,7 @@ async def lifespan(ctx):
 
 @client.command()
 async def q(ctx):
-    api_key = 'E92DF58BTR7PGEAK'
+    api_key = 'APIKEY'
     symbol = 'QQQM'
     url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={api_key}'
 
