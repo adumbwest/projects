@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Chronological Bookmarks",
+  "version": "1.0",
+  "description": "Always move newly saved bookmarks to the top of the folder.",
+  "permissions": ["bookmarks"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
