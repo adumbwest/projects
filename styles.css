@@ -1,0 +1,187 @@
+:root {
+  --primary: #3533cd;
+  --text: #111;
+  --muted: #666;
+  --bg: #ffffff;
+  --line: #e9e9ee;
+}
+
+/* BASE */
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 360px;
+  background: url('assets/banner.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 60px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.hero-content h1 {
+  margin: 0;
+  font-size: 46px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #000000, #3533cd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* LOGO */
+.logo {
+  width: 380px;
+  height: 216px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* LAYOUT */
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+/* SECTIONS */
+section {
+  padding: 60px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+/* HEADINGS */
+h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+/* TEXT */
+p {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 720px;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+p {
+  text-align: justify;
+}
+
+/* CONTACT FORM CONTAINER */
+.contact-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  max-width: 520px;
+}
+
+/* INPUT FIELD */
+.contact-form input {
+  flex: 1;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: inherit;
+
+  border: 1px solid #e2e2e8;
+  border-radius: 6px;
+
+  outline: none;
+  background: #fff;
+  color: #111;
+
+  transition: border-color 0.2s ease;
+}
+
+/* FOCUS STATE (institutional accent) */
+.contact-form input:focus {
+  border-color: #3533cd;
+}
+
+/* BUTTON */
+.contact-form button {
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: inherit;
+
+  border: 1px solid #3533cd;
+  background: #3533cd;
+  color: #fff;
+
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+/* HOVER STATE */
+.contact-form button:hover {
+  background: #2c2ab3;
+  border-color: #2c2ab3;
+}
